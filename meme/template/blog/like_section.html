@@ -1,0 +1,29 @@
+<style>
+    .trending-place-item .sav-btn:hover {
+        background: #40403f;
+    }
+    
+    .trending-place-item .sav-btn {
+        position: absolute;
+        left: 7%;
+        z-index: 999;
+        top: 10%;
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+        background-color: rgba(0, 0, 0, 0.37);
+        width: 30px;
+        height: 30px;
+        font-size: 17px;
+        border-radius: 50%;
+        line-height: 1.9;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+</style>
+{%csrf_token %} {%if is_liked%}
+
+<span class="sav-btn" type="submit" id="like" name="post_id" value="{{post.id}}"><i class="icofont-heart" style="color:#f10c45; font-size:17px;" ></i> </span> {%else%}
+<span class="sav-btn " type="submit" id="like" name="post_id" value="{{post.id}}"> <i class="icofont-heart"style="font-size:17px;"></i></span> {%endif%}
+</br><span style="font-size:13px;" class=" pad-right-15">{{t_likes}} &nbsp;like{{t_likes|pluralize}}</span>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; {{comment.count}}</br>
+<!--Like{{t_likes|pluralize}} -->

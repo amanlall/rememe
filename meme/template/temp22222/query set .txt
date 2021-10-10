@@ -1,0 +1,55 @@
+<QuerySet [{ 'id': 2, 'user_id': 2, 'image': 'profile_pics/meme7_TOomwIy.jpg', 'verified': False}, { 'id': 5, 'user_id': 7, 'image': 'default.jpg', 'verified': False}, { 'id': 6, 'user_id': 8, 'image': 'default.jpg', 'verified': False}, { 'id': 4,
+    'user_id': 6, 'image': 'default.jpg', 'verified': False}, { 'id': 7, 'user_id': 9, 'image': 'profile_pics/Pictures_Instagram_IMG_20170515_000034_634.jpg', 'verified': False}, { 'id': 8, 'user_id': 10, 'image': 'default.jpg', 'verified': False}, { 'id': 9,
+    'user_id': 11, 'image': 'default.jpg', 'verified': False}, { 'id': 1, 'user_id': 1, 'image': 'profile_pics/IMG_20160912_164938_jspKVco.JPG', 'verified': True}]>
+    >>>
+
+    <QuerySet [ { 'id': 1, 'title': 'this is my first post for memestagram', 'image': 'user_memes/funny-meme-backgrounds-lovely-funny-memes-wallpapers-hd-this-year-of-funny-me_pJ47tJ6.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 12, 11, 46, 987922,
+        tzinfo=<UTC>), 'author_id': 1}, {'id': 2, 'title': 'this is my second post', 'image': 'user_memes/home_slider.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 12, 25, 15, 728983, tzinfo=
+        <UTC>), 'author_id': 1}, {'id': 13, 'title': 'my third post', 'image': 'user_memes/meme4.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 13, 12, 40, 368960, tzinfo=
+            <UTC>), 'author_id': 1}, {'id': 14, 'title': 'good caption', 'image': 'user_memes/left-wallpaper_U4sX2iK.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 13, 22, 22, 191016, tzinfo=
+                <UTC>), 'author_id': 2}, {'id': 15, 'title': 'good caption', 'image': 'user_memes/meme7.jpg', 'date_posted':datetime.datetime(2020, 4, 14, 16, 14, 52, 168891, tzinfo=
+                    <UTC>), 'author_id': 2}, {'id': 17, 'title': 'animesh ka caption', 'image': 'user_memes/meme4_DdXwObU.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 17, 32, 25, 488790, tzinfo=
+          <UTC>), 'author_id': 8}, {'id': 16, 'title': 'hello Memer', 'image': 'user_memes/funny-meme-backgrounds-lovely-funny-memes-wallpapers-hd-this-year-of-funny-me_AFrHUqm.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 17, 26, 35, 272364,
+              tzinfo=
+              <UTC>), 'author_id': 1}, {'id': 18, 'title': 'post10', 'image': 'user_memes/mitbh_105.JPG', 'date_posted': datetime .datetime(2020, 4, 15, 18, 35, 8, 47433, tzinfo=
+                  <UTC>), 'author_id': 6}, {'id': 19, 'title': 'sinha meme |||', 'image': 'user_memes/Pictures_Instagram_IMG_20170512_233853_430.jpg', 'date_posted': datetime.datetime(2020, 4, 15, 19, 52, 7, 584300, tzinfo=
+                      <UTC>), 'author_id': 10}, {'id': 21, 'title': 'hi', 'image': 'user_memes/Pictures_Instagram_IMG_20170515_000034_634.jpg', 'date_posted': datetime.datetime(2020, 4, 16, 7, 23, 41, 246674, tzinfo=
+                          <UTC>), 'author_id': 11}, {'id': 22, 'title': 'bu new user', 'image': 'user_memes/Pictures_Instagram_IMG_20170427_125532_870.jpg', 'date_posted': datetime.datetime(2020, 4, 17, 16, 37, 42, 574128, tzinfo=
+   <UTC>), 'author_id': 1}]>
+
+ <QuerySet [{ 'id': 8, 'password': 'pbkdf2_sha256$180000$pAImfGm5Kp7u$ctpTyfcYtLtQvSFg0zifuESw5/PCtXVOUUOcckUclTs=', 'last_login': datetime.datetime(2020, 4, 14, 17, 31, 23, 394860, tzinfo=<UTC>), 'is_superuser': False, 'username': 'animesh', 'first_name': '', 'last_name': '', 'email': 'animesh@gmail. com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2020, 4, 14, 17,
+     30, 4, 53801, tzinfo=
+     <UTC>)}, {'id': 6, 'password': 'pbkdf2_sha256$180000$j1Y16hu1Zkf5$aw/d+TwJYh3PGAuojDXOZlrj1qjiqS6tsv/Yqay9qsE=', 'last_login': datetime.datetime(2020, 4, 15, 18, 32, 57, 888548, tzinfo=
+         <UTC>), 'is_superuser': False, 'username': 'roshni', 'first_name': '', 'last_name': '', 'email': '', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2020, 4, 14, 17, 23, 56, 577298,
+             tzinfo=
+             <UTC>)}, {'id': 9, 'password': 'pbkdf2_sha256$180000$cBdWe8bbjOHL$hfdGN4eogbn4wgHeaPm9oI yhEcBYiS3QfRvccwrvs6Y=', 'last_login': datetime.datetime(2020, 4, 15, 18, 45, 54, 548253, tzinfo=
+                 <UTC>), 'is_superuser': False, 'username': 'sweta20', 'first_name': '', 'last_name': '', 'email': 'swetasingh@gmail.com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2020,
+                     4, 1 5, 18, 45, 28, 235710, tzinfo=
+                     <UTC>)}, {'id': 10, 'password': 'pbkdf2_sha256$180000$Nsj0Fa87CmcA$pAYKmger60G4dd84wd03L3gpZUVdRcNG7H5M8QMtMao=', 'last_login': datetime.datetime(2020, 4, 15, 19, 51, 37, 553005, tzinfo=
+                                                                        <UTC>), 'is_superuser': False, 'username': 'shubahma', 'first_name': '', 'last_name' : '', 'email': 'sing@gmail.com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2020,
+       4, 15, 19, 51, 18, 865475, tzinfo=
+       <UTC>)}, {'id': 11, 'password': 'pbkdf2_sha256$180000$bbEaW9iKIgDx$SrcLNqRn6PMzsgbfQFlLzGwXPm5OCX+3vBXhew1xbbk=', 'last_login': datetime.datetime(2020, 4, 1 6, 7, 22, 49, 667648, tzinfo=
+           <UTC>), 'is_superuser': False, 'username': 'newuser', 'first_name': '', 'last_name': '', 'email': 'n@gmail.com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2020,
+               4, 16, 7, 22, 34, 964531, tzinfo=
+               <UTC>)}, {'id': 2, 'password': 'pbkdf2_sha256$18 0000$Gus5Z0noY6JU$wPrj4bNf8ySEL9H3C3UQ7L9mitFxh9v6oYOZGaye0mE=', 'last_login': datetime.datetime(2020, 4, 14, 16, 14, 25, 684484,
+                   tzinfo=
+                   <UTC>), 'is_superuser': False, 'username': 'vishal', 'first_name': '', 'last_name': '', 'email': 'vishal@gmail.com', 'is_staff': False, 'is_active': True, 'date_jo ined':
+                       datetime.datetime(2020, 4, 14, 12, 26, 35, 432286, tzinfo=
+                       <UTC>)}, {'id': 1, 'password': 'pbkdf2_sha256$180000$jCJCkF0cFyQg$uokOtK4I2vViL8PfJ/kzcOIKMv6N7WB70VOfadi3A/0=', 'last_login': datetime.datetime(2020, 4, 17, 16, 35,
+                           41, 653918, tzinfo=
+                           <UTC>), 'is_superuser': True, 'username': 'aman', 'first_name': '', 'last_name': '', 'email': 'contact.amanlall@gmail.com', 'is_staff': True, 'is_active': True,
+                               'date_joined': datetime.datetime(2020, 4, 8, 11, 23, 49, 979726, tzinfo=
+                               <UTC>)}, {'id': 7, 'password': 'pbkdf2_sha256$180000$RHM9g3TopAAQ$Hc5UQvcOS9tO10uur8vLyAw86yIyvwaGODPwFNCz+5M=', 'las t_login': None, 'is_superuser': False,
+   'username': 'sweta', 'first_name': '', 'last_name': '', 'email': 'swetasingh@gmail.com', 'is_staff': False, 'is_active': True, 'date_joined': datetime.datetime(2020,
+   4, 14, 17, 27, 30, 765178, tzinfo=
+   <UTC>)}]> >>> u.get(id=1)
+       <QuerySet [{ 'id': 1, 'title': 'this is my first post for memestagram', 'image': 'user_memes/funny-meme-backgrounds-lovely-funny-memes-wallpapers-hd-this-year-of-funny-me_pJ47tJ6.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 12, 11, 46, 987922,
+           tzinfo=<UTC>), 'author_id': 1}, {'id': 2, 'title':'this is my second post', 'image': 'user_memes/home_slider.jpg', 'date_posted': datetime.datetime(2020, 4,
+   14, 12, 25, 15, 728983, tzinfo=
+           <UTC>), 'author_id': 1}, {'id': 13, 'title': 'my third post', 'image': 'user_memes/meme4.jpg', 'date_posted': datetime.datetime(2020, 4, 14, 13,
+               12, 40, 368960, tzinfo=
+               <UTC>), 'author_id': 1}, {'id': 16, 'title': 'hello Memer', 'image': 'user_memes/funny-meme-backgrounds-lovely-funny-memes-wallpapers-hd-this-year-of-funny-me_AFrHUqm.jpg',
+                                                   'date_posted': datetime.datetime(2020, 4, 14, 17, 26, 35, 272364, tzinfo=
+                                <UTC>), 'author_id': 1}, {'id': 22, 'title': 'bu new user', 'image': 'user_memes/Pictures_Instagram_IMG_20170427_125532_870.jpg', 'date_posted':
+                                                       datetime.datetime(2020, 4, 17, 16, 37, 42, 574128, tzinfo=
+       <UTC>), 'author_id': 1}]> >>> memer_post_details.

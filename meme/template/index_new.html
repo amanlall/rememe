@@ -1,0 +1,394 @@
+{% load static %} {% load humanize %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="rememe" />
+    <meta name="description" content="Please don't get addicted to memes. Rememe is a platform to share memes. Get verified profile. Share your Profile to friends">
+    <meta name="keywords" content="Meme, Hu,or, Darkmeme, Dark meme, sarcasm, meme page, Best meme on Internet, trending memes, modi meme, memers, memers income, best meme of 2020, lockdown meeme, carryminati, youtube vs Tik tok,meme love, corona cases,  corona meme, corona, covid19">
+
+
+    <base href=/>
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="{% static 'css/plugin.css' %}" rel="stylesheet" />
+    <!-- style CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- Dashboard CSS -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" />
+    <!--color switcher css-->
+    <link rel="stylesheet" href="{% static 'css/switcher/skin-purple.css' %}" media="screen" id="style-colors" />
+    <!-- Document Title -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+    <title>reMEME-Home</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <link rel="canonical" href="https://amp.dev/documentation/examples/style-layout/how_to_support_images_with_unknown_dimensions/index.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+        
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+        
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+         :root {
+            --color-primary: #ffffff;
+            --color-bg-light: #FAFAFC;
+            --space-1: .5rem;
+            /* 8px */
+        }
+        
+        .fixed-container,
+        .fixed-height-container img {
+            background-color: var(--color-primary);
+        }
+        
+        .contain img {
+            object-fit: contain;
+        }
+        
+        .cover img {
+            object-fit: cover;
+        }
+        
+        .fixed-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: var(--space-1);
+        }
+        
+        .fixed-height-container {
+            position: relative;
+            width: auto;
+            height: 300px;
+            margin: var(--space-1);
+        }
+        
+        .pad {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Preloader starts
+    <div class="preloader js-preloader">
+        <img src="{% static 'images/preloader.gif' %}" alt="...">
+    </div>
+    Preloader ends-->
+    <!--Page Wrapper starts-->
+    <div class="page-wrapper ">
+        <!--header starts-->
+        <header class="header transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v2">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/"><img src="{% static 'images/logo-black.png' %}" alt="rememe" class="img-fluid" style="width:109.55px; height:70px;"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <nav class="site-navigation float-left">
+                                    <div class="container">
+                                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                            <li class="has-children">
+                                                <a href="#">Home</a>
+                                                <ul class="dropdown">
+                                                    {% if user.is_authenticated %}
+                                                    <li><a href="memer/{{user.username}}">My Profile</a></li>
+                                                    <li><a href="{% url 'post-create'%}">Share Content</a></li>
+                                                    <li><a href="{% url 'logout'%}">Log Out</a></li>
+                                                    {% else %}
+                                                    <li><a href="{% url 'register' %}">Create Account</a></li>
+                                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                                    {% endif %}
+                                                </ul>
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="#">Popular Rememers</a>
+                                                <ul class="dropdown">
+                                                    <li class="has-children">
+                                                        <li><a href="{% url 'contact' %}">Get Verified Account<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                            width="20" height="20"
+                                                            viewBox="0 0 172 172"
+                                                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M106.13833,10.75l12.30158,19.02033l22.62517,1.13233l1.14308,22.62158l19.03108,12.29083l-10.32358,20.167l10.33433,20.15625l-19.02033,12.30158l-1.13233,22.62517l-22.62158,1.14308l-12.29083,19.03108l-20.167,-10.32358l-20.15625,10.33433l-12.30158,-19.02033l-22.62517,-1.13233l-1.14308,-22.62158l-19.03108,-12.29083l10.32358,-20.167l-10.33433,-20.15625l19.02033,-12.30158l1.13233,-22.62517l22.62158,-1.14308l12.29083,-19.03108l20.167,10.32358z" fill="#6449e7"></path><path d="M76.669,111.99708l-23.28092,-23.27375l7.60383,-7.60025l15.79175,15.79175l34.28533,-33.23183l7.482,7.7185z" fill="#ffffff"></path></g></g></svg> </a>                                                            </li>
+                                                        <li> <a href="{% url 'contact' %}">Are You a Page Admin?</a> </li>
+                                                        <li> <a href="{% url 'rememer-list' %}">MEMEbers</a> </li>
+                                                        <li> <a href="{% url 'contact' %}">Contact Us</a></li>
+                                                </ul>
+                                                </li>
+                                                <li>{% if user.is_authenticated %}
+                                                    <a href="memer/{{user.username}}">Hi, {{request.user}}</a> {%else%}
+                                                    <a href="{% url 'login' %}">Hi, {{request.user}}</a> {%endif%}
+                                                </li>
+
+
+                                        </ul>
+                                        </li>
+                                        <li class="d-lg-none"><a class="btn v1" href="{% url 'post-create'%}">Share Meme<i class="ion-plus-round"></i></a></li>
+                                        </ul>
+
+
+                                    </div>
+                                </nav>
+                                <div class="d-lg-none sm-right">
+                                    <a href="{% url 'contact' %}" class="mobile-bar js-menu-toggle">
+                                        <span class="ion-android-menu"></span>
+                                    </a>
+                                </div>
+                                <div class="add-list float-right">
+                                    {% if user.is_authenticated %}
+                                    <a class="btn v8" href="{% url 'post-create'%}">Add Your Meme<i class="ion-plus-round"></i></a> {% else %}
+                                    <a class="btn v8" href="{% url 'login'%}">Add Your Meme<i class="ion-plus-round"></i></a>{% endif%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile-menu starts -->
+                    <div class="site-mobile-menu">
+                        <div class="site-mobile-menu-header">
+                            <div class="site-mobile-menu-close  js-menu-toggle">
+                                <span class="ion-ios-close-empty"></span>
+                            </div>
+                        </div>
+                        <div class="site-mobile-menu-body"></div>
+                    </div>
+                    <!--mobile-menu ends-->
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+        <!--Breadcrumb section starts-->
+
+        <!--Breadcrumb section ends-->
+        <!--Listing filter starts-->
+        <div class="col-md-8">
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+
+        <div class="style1 section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row pad-tb-20 align-items-center">
+                            <div class="col-md-8">
+                                {% if messages %} {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                                {% endfor %} {% endif %} {% block content %}{% endblock %}
+                            </div>
+                        </div>
+
+                        <div style="margin:10px 10px 10px 10px; padding-Top:10px;">
+                            <div class="tab-content">
+                                <div id="grid-view" class="tab-pane active  product-grid">
+                                    <div class="row">
+                                        {% for post, pic, ver ,is_liked, t_likes in context %}
+                                        <div class="col-xl-4 col-lg-6 col-md-12" style="color:black; border:1px solid #dddd; margin-right:auto; margin-bottom:30px;">
+                                            <div class="trending-place-item">
+                                                <div class="trending-place-item ">
+
+                                                    <div class="trending-title-box no-pad-bot pad-top-5 ">
+                                                        <div class="header-button-item js-sidebar-btn">
+                                                            <img src="{{pic}}" alt="meme">
+                                                            <a href="memer/{{post.author}}"> <span style="color:black;">{{ post.author }}  {% if ver%} <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M106.13833,10.75l12.30158,19.02033l22.62517,1.13233l1.14308,22.62158l19.03108,12.29083l-10.32358,20.167l10.33433,20.15625l-19.02033,12.30158l-1.13233,22.62517l-22.62158,1.14308l-12.29083,19.03108l-20.167,-10.32358l-20.15625,10.33433l-12.30158,-19.02033l-22.62517,-1.13233l-1.14308,-22.62158l-19.03108,-12.29083l10.32358,-20.167l-10.33433,-20.15625l19.02033,-12.30158l1.13233,-22.62517l22.62158,-1.14308l12.29083,-19.03108l20.167,10.32358z" fill="#6449e7"></path><path d="M76.669,111.99708l-23.28092,-23.27375l7.60383,-7.60025l15.79175,15.79175l34.28533,-33.23183l7.482,7.7185z" fill="#ffffff"></path></g></g></svg> {%endif%}
+
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="post/{{post.id}}">
+                                                    <div class="trending-img fixed-height-container ">
+
+                                                        <amp-img href="post/{{post.id}}" class="contain" layout="fill" src="{{post.image.url}}" style="" alt="#">
+                                                        </amp-img>
+
+
+                                                    </div>
+                                                </a>
+                                                <div class="trending-place-item">
+                                                    <small class="float-right pad-right-15 ">
+                                                        {{post.date_posted|naturaltime }}     
+                                                    </small>
+                                                    <div class="trending-title-box">
+                                                        <div id="like-section-{{post.id}}">
+                                                            {%include 'blog/like_section.html' %}
+                                                        </div>
+                                                        <small class="bold">
+                                                            {{post.author}}:
+                                                        </small> &nbsp;&nbsp;{{ post.title }}
+
+                                                        <!--
+                                                            <span class="comment-btn"><i class="icofont-speech-comments"></i></span> </br>
+                                                                </br>
+                                                                <div class='main-comment-section-{{post.id}}'>
+
+                                                                </div>-->
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {%endfor %}
+                                        </div>
+                                    </div>
+                                    <!--pagination ends-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Listing filter ends-->
+            <!-- Scroll to top starts-->
+            <span class="scrolltotop"> <i class="ion-arrow-up-c"></i></span>
+            <!-- Scroll to top ends-->
+
+        </div>
+
+
+        <p class="text-center">&copy; 2020 Made with love in Quarantine. All right reserved</p>
+
+        <!--Page Wrapper ends-->
+        <!--Footer Starts-->
+
+        <!--Footer ends-->
+        <!--Color switcher starts-->
+
+        <!--Color switcher ends-->
+        <!--Scripts starts-->
+        <!--plugin js-->
+        <script src="{% static 'js/plugin.js' %}"></script>
+        <!--google maps-->
+
+        <!--Main js-->
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+        <script type='text/javascript'>
+            $(document).ready(function(event) {
+                $(document).on('click', '#like', function(event) {
+                    event.preventDefault();
+                    var pk = $(this).attr('value');
+                    console.log(pk);
+                    $.ajax({
+                        type: 'POST',
+
+                        url: '/like/',
+                        data: {
+                            'id': pk,
+                            'csrfmiddlewaretoken': '{{csrf_token}}',
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+
+                            $('#like-section' + -pk + '').html(response['form'])
+                            console.log($('#like-section' + -pk + '').html(response['form']));
+                            console.log
+                        },
+                        error: function(rs, e) {
+                            console.log(rs.responseText);
+
+                        },
+                    });
+                });
+
+                $('.reply-btn').click(function() {
+                    $(this).parent().parent().next('.replied-comments').fadeToggle()
+                });
+
+                $(document).on('click', '#comment', function(event) {
+                    event.preventDefault();
+                    var ck = $(this).attr('value');
+                    console.log(ck);
+                    $.ajax({
+                        type: 'POST',
+                        id: ck,
+                        url: '/comment/',
+                        data: $(this).serialize(),
+                        dataType: 'json',
+                        success: function(response) {
+                            $('.main-comment-section' + -ck + '').html(response['form']);
+                            console.log($('.main-comment-section' + -ck + '').html(response['form']));
+                            $('textarea').val('')
+                        },
+                        error: function(rs, e) {
+                            console.log(rs.responseText);
+
+
+
+                        },
+                    })
+
+
+                })
+
+
+            });
+        </script>
+</body>
+
+</html>

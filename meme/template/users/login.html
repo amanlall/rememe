@@ -1,0 +1,141 @@
+{% load static %} {%load crispy_forms_tags%}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Aman" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="{% static 'css/plugin.css' %}" rel="stylesheet" />
+    <!-- style CSS -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+
+    <link href="{% static 'css/cropper.min.css' %}" rel="stylesheet">
+    <!--color switcher css-->
+    <link rel="stylesheet" href="{% static 'css/switcher/skin-purple.css'%}" media="screen" id="style-colors" />
+    <!-- Document Title -->
+
+    <title>reMEME</title>
+</head>
+
+<body>
+    <!--Page Wrapper starts-->
+    <div class="page-wrapper">
+        <!--header starts-->
+        <header class="transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v2">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/"><img src="{% static 'images/logo-black.png'%}" alt="logo" class="img-fluid"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <nav class="site-navigation float-left">
+                                    <div class="container">
+
+                                    </div>
+                                </nav>
+                                <div class="d-lg-none sm-right">
+                                    <a href="#" class="mobile-bar js-menu-toggle">
+                                        <span class="ion-android-menu"></span>
+                                    </a>
+                                </div>
+                                <div class="add-list float-right">
+                                    <a class="btn" href="#">Re-share the memes you saved</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile-menu starts -->
+                    <div class="site-mobile-menu">
+                        <div class="site-mobile-menu-header">
+                            <div class="site-mobile-menu-close  js-menu-toggle">
+                                <span class="ion-ios-close-empty"></span>
+                            </div>
+                        </div>
+                        <div class="site-mobile-menu-body"></div>
+                    </div>
+                    <!--mobile-menu ends-->
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+        <!--User Login section starts-->
+        <div class="user-login-section section-padding bg-fixed" style="background-image: url(images/header/hero-5.jpg)">
+            <div class="container">
+                <div class="col-md-8">
+                    {% if messages %} {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %} {% endif %}
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1  text-center">
+
+                        <div class="login-wrapper">{% block content %}
+                            <div class='content-section'>
+
+                                <form method="POST">
+                                    {%csrf_token%}
+                                    <fieldset class="form-group">
+                                        <legend class="border-bottom mb-4">Log In</legend>
+                                        {{ form| crispy }}
+                                    </fieldset>
+                                    <div class="form-group">
+                                        <button class="btn v4" type="submit"> Log In </button>
+                                    </div>
+                                </form>
+
+                                <div class="border-top pt-3">
+                                    <small class="text-muted"> Need An Account?<a class ='ml-2' href ="{% url 'register' %}">Sign Up Now</a>
+                                    
+                                    </small>
+                                </div>
+                                {% endblock%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--User login section ends-->
+        <!--Login section ends-->
+        <!-- Scroll to top starts-->
+        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <!-- Scroll to top ends-->
+    </div>
+    <!--Page Wrapper ends-->
+    <!--Footer Starts-->
+
+    <!--Footer ends-->
+    <!--Color switcher starts-->
+
+    <!--Color switcher ends-->
+    <!--Scripts starts-->
+    <!--plugin js-->
+
+
+
+    <script src="{% static 'js/plugin.js' %}"></script>
+    <!--google maps-->
+
+    <!--Main js-->
+
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/cropper.min.js' %}"></script>
+    {% block javascript %} {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{% extends 'index.html' %} {% load static %}{% block content %}
+<div class="destinations" id="destinations">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_subtitle">Every thing is in development mode.</div>
+                <div class="section_title">
+                    <h2>LockDown Day {{ls.0.day}} MeMes</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row destinations_row">
+            <div class="col">
+                <div class="destinations_container item_grid">
+                    {% for d in ls %}
+                    <!-- Destination -->
+                    <div class="destination item">
+                        <div class="destination_image">
+                            <a href="#"> <img src="{{d.img.url}}" alt=""> </a>
+                            <!--  <div class="spec_offer text-center"><a href="#">Special Offer</a></div> -->
+                        </div>
+                        <div class="destination_content">
+                            <div class="destination_title">{{d.name}}</a>
+                            </div>
+                            <div class="destination_subtitle">
+                                <p>{{d.desc}}</p>
+                            </div>
+                            <div class="destination_price">#-#-#-#</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endblock %}

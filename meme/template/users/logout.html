@@ -1,0 +1,17 @@
+{% extends "users/login.html" %} {%load crispy_forms_tags%} {% block content%}
+<div class='content-section'>
+    <form>
+        {%csrf_token%}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Pehli Fursat me, Logged Out</legend>
+
+        </fieldset>
+    </form>
+
+    <div class="border-top pt-3">
+        <small class="text-muted"><a class ='ml-2' href ="{% url 'login' %}">Log In Again</a>
+        
+        </small>
+    </div>
+</div>
+{% endblock %}

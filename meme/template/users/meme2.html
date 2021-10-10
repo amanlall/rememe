@@ -1,0 +1,40 @@
+{% extends "index_new.html" %} {%load crispy_forms_tags %}{% block content%} {{request.user}} ---------- {{slugs}} {% if slugs == request.user.username %} {% if messages %} {% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+    {{ message }}
+</div>
+{% endfor %} {% endif %}
+<form method="POST" enctype='multipart/form-data'>
+    {%csrf_token%}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4"> Profile Info</legend>
+        {{ context.u_form| crispy }} {{ context.p_form| crispy }}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit"> Update </button>
+    </div>
+</form>
+
+{%endif%}
+</div>
+
+
+
+<div>
+    <a href="https://www.instagram.com/amanlal786/"><img src={{MDP}} /> </a>
+    <H1>{{NOP}}</H1>
+    <h2> {{slugs}}</h2>
+
+    {%for t,u,d in PDS%}
+
+    <div class="trending-title-box">
+        <div>
+            <h2>{{t}}</h2>
+            <p>{{d}}</p>
+            <a href="https://www.instagram.com/amanlal786/"><img src={{u}} /> </a>
+        </div>
+    </div>
+    {% endfor%}
+
+
+</div>
+{% endblock %}

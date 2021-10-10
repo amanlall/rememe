@@ -1,0 +1,269 @@
+{% load static %} {%load crispy_forms_tags %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <!-- Metas -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LionCoders" />
+    <!-- Links -->
+    <link rel="icon" type="image/png" href="#" />
+    <!-- google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="{% static 'css/plugin.css' %}" rel="stylesheet" />
+    <!-- Perfect scrollbar CSS-->
+    <link href="{% static 'css/perfect-scrollbar.css'%}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+    <!-- style CSS -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <!-- Dashboard CSS -->
+    <link href="{% static 'css/dashboard.css'%}" rel="stylesheet" />
+    <!--color switcher css-->
+    <link rel="stylesheet" href="{% static 'css/switcher/skin-purple.css' %}" media="screen" id="style-colors" />
+    <!-- Document Title -->
+    <title>REmemeER</title>
+
+</head>
+
+<body>
+    <!--Preloader starts
+    <div class="preloader js-preloader">
+        <img src="{% static 'images/preloader.gif' %}" alt="...">
+    </div>
+    Preloader ends-->
+    <!--Page Wrapper starts-->
+    <div class="page-wrapper fixed-footer">
+        <!--header starts-->
+        <header class="header transparent scroll-hide">
+            <!--Main Menu starts-->
+            <div class="site-navbar-wrap v2">
+                <div class="container">
+                    <div class="site-navbar">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-6">
+                                <a class="navbar-brand" href="/"><img src="{% static 'images/logo-black.png' %}" width="120px" alt="logo" class="img-fluid"></a>
+                            </div>
+                            <div class="col-md-8 col-6">
+                                <nav class="site-navigation float-left">
+                                    <div class="container">
+                                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                            <li class="has-children">
+                                                <a href="#">Home</a>
+                                                <ul class="dropdown">
+                                                    {% if user.is_authenticated %}
+                                                    <li><a href="/memer/{{user.username}}">My Profile</a></li>
+                                                    <li><a href="{% url 'post-create'%}">Share Content</a></li>
+                                                    <li><a href="{% url 'logout'%}">Log Out</a></li>
+                                                    {% else %}
+                                                    <li><a href="{% url 'register' %}">Create Account</a></li>
+                                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                                    {% endif %}
+                                                </ul>
+                                            </li>
+                                            <li class="has-children">
+                                                <a href="#">Popular Rememers</a>
+                                                <ul class="dropdown">
+                                                    <li class="has-children">
+                                                        <li><a href="{% url 'contact' %}">Get Verified Account<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                            width="20" height="20"
+                                                            viewBox="0 0 172 172"
+                                                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M106.13833,10.75l12.30158,19.02033l22.62517,1.13233l1.14308,22.62158l19.03108,12.29083l-10.32358,20.167l10.33433,20.15625l-19.02033,12.30158l-1.13233,22.62517l-22.62158,1.14308l-12.29083,19.03108l-20.167,-10.32358l-20.15625,10.33433l-12.30158,-19.02033l-22.62517,-1.13233l-1.14308,-22.62158l-19.03108,-12.29083l10.32358,-20.167l-10.33433,-20.15625l19.02033,-12.30158l1.13233,-22.62517l22.62158,-1.14308l12.29083,-19.03108l20.167,10.32358z" fill="#6449e7"></path><path d="M76.669,111.99708l-23.28092,-23.27375l7.60383,-7.60025l15.79175,15.79175l34.28533,-33.23183l7.482,7.7185z" fill="#ffffff"></path></g></g></svg> </a>                                                            </li>
+                                                        <li> <a href="{% url 'contact' %}">Are You a Page Admin?</a> </li>
+                                                        <li> <a href="{% url 'rememer-list' %}">MEMEbers</a> </li>
+                                                        <li> <a href="{% url 'contact' %}">Contact Us</a></li>
+                                                </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Hi, {{request.user}}</a>
+                                                </li>
+
+
+                                        </ul>
+                                        </li>
+                                        <li class="d-lg-none"><a class="btn v1" href="{% url 'post-create'%}">Share Meme<i class="ion-plus-round"></i></a></li>
+                                        </ul>
+
+
+                                    </div>
+                                </nav>
+                                <div class="d-lg-none sm-right">
+                                    <a href="{% url 'contact' %}" class="mobile-bar js-menu-toggle">
+                                        <span class="ion-android-menu"></span>
+                                    </a>
+                                </div>
+                                <div class="add-list float-right">
+                                    {% if user.is_authenticated %}
+                                    <a class="btn v8" href="{% url 'post-create'%}">Add Your Meme<i class="ion-plus-round"></i></a> {% else %}
+                                    <a class="btn v8" href="{% url 'login'%}">Add Your Meme<i class="ion-plus-round"></i></a>{% endif%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile-menu starts -->
+                    <div class="site-mobile-menu">
+                        <div class="site-mobile-menu-header">
+                            <div class="site-mobile-menu-close  js-menu-toggle">
+                                <span class="ion-ios-close-empty"></span>
+                            </div>
+                        </div>
+                        <div class="site-mobile-menu-body"></div>
+                    </div>
+                    <!--mobile-menu ends-->
+                </div>
+            </div>
+            <!--Main Menu ends-->
+        </header>
+        <!--Header ends-->
+        <!--Breadcrumb section starts-->
+
+        <!--User Profile starts-->
+        <div class="user-profile section-padding mar-top-30 bg-green-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="user-titlebar">
+                            <div class="user-avatar">
+                                <img src="{{MDP}}" width="100px" height="100px">
+                            </div>
+                            <div class="user-name">
+                                <h3>{{slugs}}{% if is_ver%} <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M106.13833,10.75l12.30158,19.02033l22.62517,1.13233l1.14308,22.62158l19.03108,12.29083l-10.32358,20.167l10.33433,20.15625l-19.02033,12.30158l-1.13233,22.62517l-22.62158,1.14308l-12.29083,19.03108l-20.167,-10.32358l-20.15625,10.33433l-12.30158,-19.02033l-22.62517,-1.13233l-1.14308,-22.62158l-19.03108,-12.29083l10.32358,-20.167l-10.33433,-20.15625l19.02033,-12.30158l1.13233,-22.62517l22.62158,-1.14308l12.29083,-19.03108l20.167,10.32358z" fill="#6449e7"></path><path d="M76.669,111.99708l-23.28092,-23.27375l7.60383,-7.60025l15.79175,15.79175l34.28533,-33.23183l7.482,7.7185z" fill="#ffffff"></path></g></g></svg>                                    {%endif%} </h3>
+
+                                <h4>Total posts: <small class="counter-value">{{NOP}}</small></h4>
+                                <h4>Total Likes: <small class="counter-value">{{NOL}}</small></h4>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <div class="user-follow text-right md-left">
+                            {% if request.user.username == slugs %}
+
+                            <button type="button" class="btn v8" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Update Profile</button>
+
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                             <span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" enctype='multipart/form-data'>
+                                                {%csrf_token%}
+                                                <fieldset class="form-group">
+                                                    <legend class="border-bottom mb-4"> Profile Info</legend>
+                                                    {{ context.u_form| crispy }} {{ context.p_form| crispy }}
+                                                </fieldset>
+                                                <div class="form-group">
+                                                    <button class="btn v3" type="submit"><i class="icofont-eye-alt"></i> Update </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endif %}
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <!--User Profile ends-->
+        <!--User profile details starts-->
+        <div class="list-details-section section-padding mar-top-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                        <div class="user_info_menu">
+                            <ul class="nav nav-tabs list-details-tab" id="lionTab" role="tablist">
+                                <li class="nav-item active">
+                                    <a data-toggle="tab" href="#my-list">Posts</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content mar-top-30" id="lionTabContent">
+                            <div class="tab-pane fade active show" id="my-list">
+                                <div class="row">
+                                    {%for t,u,d,p in PDS%}
+                                    <div class="col-md-6">
+                                        <div class="similar-item mar-bot-40">
+                                            <a href="/post/{{p}}"> <img src={{u}} /> </a>
+
+                                            <div class="similar-title-box">
+                                                <h5><a href="">{{t}}</a></h5>
+                                                <small><span >{{d}}</span></small>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {%endfor%}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--User profile details ends-->
+        <!-- Scroll to top starts-->
+        <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+        <!-- Scroll to top ends-->
+    </div>
+    <!--Page Wrapper ends-->
+    <!--Footer Starts-->
+    <div class="footer-wrapper no-pad-tb footer-fixed v1" style="background-image: url(images/bg/footer-bg-1.png)">
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 text-center">
+                        <p>&copy; 2019 listagram. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer ends-->
+        <!--Color switcher starts-->
+        <div class="color-switcher hide-color-switcher">
+            <a class="switcher-button"><i class="ion-android-settings"></i></a>
+            <div class="color-switcher-title text-center">
+                <h5>Switch Colors</h5>
+            </div>
+            <div class="color-list text-center">
+                <a class="color green-theme" title="green"></a>
+                <a class="color red-theme" title="red"></a>
+                <a class="color blue-theme" title="blue"></a>
+                <a class="color orange-theme" title="orange"></a>
+                <a class="color pink-theme" title="pink"></a>
+                <a class="color purple-theme" title="purple"></a>
+                <a class="color violet-theme" title="violet"></a>
+                <a class="color aqua-theme" title="aqua"></a>
+            </div>
+        </div>
+        <script src="{% static 'js/plugin.js' %}"></script>
+        <!--Perfect Scrollbar JS-->
+        <script src="{% static 'js/perfect-scrollbar.min.js' %}"></script>
+        <!-- Main JS-->
+        <script src="{% static  'js/main.js' %}"></script>
+        <!-- Dashboard JS-->
+        <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+
+</html>

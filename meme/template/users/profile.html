@@ -1,0 +1,30 @@
+{% extends "index_new.html" %} {%load crispy_forms_tags %}{% block content%}
+
+
+<div class="col-xl-4 col-lg-6 col-md-12">
+    <div class="trending-place-item">
+        <div class="trending-img">
+            <img src="{{user.profile.image.url}}" width=1500px alt="#">
+            <span class="trending-rating-green"></span>
+        </div>
+        <div class="trending-title-box">
+            <small><a href="#">{{user.username}}</a>
+            </small>
+            <small><a href="#">{{user.email}}
+                  </a>
+            </small>
+        </div>
+    </div>
+
+    <form method="POST" enctype='multipart/form-data'>
+        {%csrf_token%}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"> Profile Info</legend>
+            {{ u_form| crispy }} {{ p_form| crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit"> Update </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

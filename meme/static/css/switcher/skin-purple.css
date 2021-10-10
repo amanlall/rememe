@@ -1,0 +1,136 @@
+.btn.v8,
+.btn.v1,
+.btn.v3,
+.overlay.green,
+/*.footer-wrapper.footer-fixed,*/
+.header.transparent.scroll .site-navbar-wrap.v1,
+.filter-checkbox input[type="checkbox"]:checked + label::before,
+.single-team-info,
+.btn.v6.red,
+.scrolltotop,
+.trending-pagination .swiper-pagination-bullet-active,
+.client-pagination .swiper-pagination-bullet-active,
+.trending-pagination .swiper-pagination-bullet,
+.client-pagination .swiper-pagination-bullet,
+.process-icon span,
+.page-num li.active,
+.price-range.ui-slider-horizontal .ui-slider-range,
+.book-btn a,
+.facilities-list li span,
+.slider-btn.v3,
+.coupon_code,
+.contact-social li,
+.btn.v4,
+.btn.v7,
+.business-title span,
+.slider-btn.v4,
+.carousel-control-prev span,
+.carousel-control-next span,
+/*
+.footer-wrapper.footer-fixed .footer-bottom-area,
+.footer-wrapper .footer-bottom-area,
+*/
+.faq-section .card-header > a[aria-expanded="true"],
+.price-range .ui-slider-handle.ui-corner-all.ui-state-default,
+.site-navbar .site-navigation .site-menu .has-children .dropdown li:before,
+.list-details-tab .nav-item::after,
+.page-num li:hover,
+.hero-category-content:hover,
+.about-text span::before,
+/*.slider-btn.v1:hover,*/
+.trending-place-item .save-btn:hover {
+    background-color: #6449E7;
+
+}
+
+.slider-btn.v1:hover,
+.hero-prev:hover,
+.hero-next:hover{
+    border-color: #6449E7;
+}
+
+.slider-btn.v1:hover i,
+.hero-prev:hover i,
+.hero-next:hover i {
+    color: #6449E7;
+}
+.btn.v3.white:hover{
+    background: #6449E7!important;
+}
+.hero .hero__list-item a.active-list {
+    color: #6449e7;
+}
+.bg-green-1 {
+    background: rgba(100, 73, 231, 0.08);
+}
+.popular-catagory-content .cat-content,
+.popular-catagory-content.v2:hover .cat-content{
+    background:rgba(100, 73, 231, 0.80);
+}
+.pricing-table .title{
+    background:rgba(100, 73, 231, 0.80);
+}
+.switcher-button i,
+.listing-features li i,
+.list-details-tab .nav-item.active a,
+.price-amt,
+.facilities-list li i,
+.feature-left p span,
+.user-follow.text-right p span,
+.pricing-table .pricing-content li i,
+.user-login-section .nav-tabs .nav-link.active,
+.booking-confirmation-page i,
+.total_cost span,
+.boxed-widget h3 i,
+.add_list_content h4 i,
+.error-content a,
+.error-content i,
+.res-box label a,
+.business-title h6 i,
+.similar-item .customer-review p i,
+.address > span,
+.sidebar-widget.info h3 i,
+.single-listing-title h2 i,
+.single-listing-title p i,
+.btn.v3.white,
+.item-element span,
+.trending-address li i,
+.hero-category-content i,
+.app-content ul li i,
+.site-navbar .site-navigation .site-menu .has-children .dropdown > li > a:hover,
+a.rate-review:hover i {
+    color: #6449E7 !important;
+}
+
+.trending-pagination .swiper-pagination-bullet-active,
+.client-pagination .swiper-pagination-bullet-active {
+    background: #6449E7 !important;
+}
+
+
+.nice-select .option:hover {
+    background: #6449E7;
+    color: #fff;
+}
+
+.process-icon.v1,
+.hero-category-content {
+
+    border: 1px solid rgba(100, 73, 231, 0.4);
+
+}
+
+.single-testimonial-item.swiper-slide-active .testimonial-content {
+    background: rgba(100, 73, 231, 0.93);
+}
+
+.item-filter-list li a.active,
+.item-filter-list li a:hover,
+a.rate-review:hover {
+    color: #6449E7;
+    border: 1px solid #6449E7;
+}
+.section-title.v1::before {
+
+    content: url('../../images/bg/purple.png')!important;
+}
