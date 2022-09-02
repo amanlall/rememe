@@ -1,7 +1,6 @@
 asgiref==3.2.7
 astroid==2.3.3
 colorama==0.4.3
-dj-database-url==0.5.0
 Django==3.0.2
 django-crispy-forms==1.9.0
 django-heroku==0.3.1
@@ -22,3 +21,4 @@ typed-ast==1.4.1
 whitenoise==5.0.1
 wrapt==1.11.2
 zipp==3.1.0
+dj-database-url==0.5.0
