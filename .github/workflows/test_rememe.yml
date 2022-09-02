@@ -27,6 +27,13 @@ jobs:
           python -m venv venv
           source venv/bin/activate
       
+
+      - name: sudo
+        run : apt-get install sudo -y
+      - name : linux 
+        run : sudo apt-get install libpq-dev python3-dev
+      - name: linux2 
+        run: apt-get -y install gcc
       - name: Install dependencies
         run: pip install -r meme/requirements.txt
         
