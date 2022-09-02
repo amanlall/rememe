@@ -11,7 +11,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import dj_database_url
+#import dj_database_url
 import os
 from django.conf import settings
 from django.conf.urls.static import static
@@ -87,9 +87,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres',
-        'USER': 'aman',
-        'PASSWORD': '77778888',
-	'HOST':'django-aws-demo.cduh5xih8r8l.ap-south-1.rds.amazonaws.com',
+        'USER': 'rememe',
+        'PASSWORD': '12345678abc!',
+	'HOST':'rememesql.postgres.database.azure.com',
         'PORT': '5432',
         }
 }
