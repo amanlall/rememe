@@ -28,10 +28,10 @@ jobs:
           source venv/bin/activate
       
 
-      - name: sudo
+      - name: install
         run : apt-get install sudo -y
       - name : linux 
-        run : sudo apt-get install libpq-dev python3-dev
+        run : apt-get install libpq-dev python3-dev
       - name: linux2 
         run: apt-get -y install gcc
       - name: Install dependencies
